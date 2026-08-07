@@ -1,51 +1,51 @@
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
-test('loads landing page', async ({ page }) => {
-  await page.goto('/');
+test("loads landing page", async ({ page }) => {
+  await page.goto("/");
 
-  await expect(page.getByText('GameHub')).toBeVisible();
+  await expect(page.getByText("GameHub")).toBeVisible();
 });
 
-test('captures player name', async ({ page }) => {
-  await page.goto('/');
+test("captures player name", async ({ page }) => {
+  await page.goto("/");
 
   await page
-    .getByPlaceholder('Enter your name')
-    .fill('Ethan');
+    .getByPlaceholder("Enter your name")
+    .fill("Ethan");
 
   await expect(
-    page.getByDisplayValue('Ethan')
-  ).toBeVisible();
+    page.getByPlaceholder("Enter your name")
+  ).toHaveValue("Ethan");
 });
 
-test('navigates to Tic Tac Toe and back', async ({ page }) => {
-  await page.goto('/');
+test("navigates to Tic Tac Toe and back", async ({ page }) => {
+  await page.goto("/");
 
   await page
-    .getByRole('button', { name: 'Tic Tac Toe' })
+    .getByRole("button", { name: "Tic Tac Toe" })
     .click();
 
   await expect(
-    page.getByText('Tic Tac Toe')
+    page.getByText("Tic Tac Toe")
   ).toBeVisible();
 
   await page
-    .getByRole('button', { name: 'Back to Hub' })
+    .getByRole("button", { name: "Back to Hub" })
     .click();
 
   await expect(
-    page.getByText('GameHub')
+    page.getByText("GameHub")
   ).toBeVisible();
 });
 
-test('navigates to Treasure Hunt', async ({ page }) => {
-  await page.goto('/');
+test("navigates to Treasure Hunt", async ({ page }) => {
+  await page.goto("/");
 
   await page
-    .getByRole('button', { name: 'Play' })
+    .getByRole("button", { name: "Treasure Hunt" })
     .click();
 
   await expect(
-    page.getByText('Treasure Hunt')
+    page.getByText("Treasure Hunt")
   ).toBeVisible();
 });
