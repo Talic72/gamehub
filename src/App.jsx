@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { usePlayer } from "./context/PlayerContext";
 import Home from "./pages/Home";
+import RockPaperScissors from "./pages/RockPaperScissors";
 
 function Placeholder({ title }) {
   const { playerName } = usePlayer();
@@ -27,7 +28,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/rps" element={<Placeholder title="Rock Paper Scissors" />} />
+      <Route path="/rps" element={<RockPaperScissors />} />
       <Route path="/tictactoe" element={<Placeholder title="Tic Tac Toe" />} />
       <Route path="/wordle" element={<Placeholder title="Wordle" />} />
       <Route path="/memory" element={<Placeholder title="Memory" />} />
