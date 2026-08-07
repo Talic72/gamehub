@@ -57,10 +57,10 @@ function Home() {
           <button>Wordle</button>
         </Link>
 
-        <Link to="/memory">
-          <button>Memory</button>
+        <Link to="/treasure">
+          <button>Treasure Hunt</button>
         </Link>
-      </div>
+        </div>
     </div>
   );
 }
