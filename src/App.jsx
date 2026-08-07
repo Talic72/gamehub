@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import { usePlayer } from "./context/PlayerContext";
 import Home from "./pages/Home";
 import RockPaperScissors from "./pages/RockPaperScissors";
+import TicTacToe from "./pages/TicTacToe";
 
 function Placeholder({ title }) {
   const { playerName } = usePlayer();
@@ -29,7 +30,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/rps" element={<RockPaperScissors />} />
-      <Route path="/tictactoe" element={<Placeholder title="Tic Tac Toe" />} />
+      <Route path="/tictactoe" element={<TicTacToe />} />
       <Route path="/wordle" element={<Placeholder title="Wordle" />} />
       <Route path="/memory" element={<Placeholder title="Memory" />} />
     </Routes>
