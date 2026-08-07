@@ -3,6 +3,7 @@ import { usePlayer } from "./context/PlayerContext";
 import Home from "./pages/Home";
 import RockPaperScissors from "./pages/RockPaperScissors";
 import TicTacToe from "./pages/TicTacToe";
+import Wordle from "./pages/Wordle";
 
 function Placeholder({ title }) {
   const { playerName } = usePlayer();
@@ -31,7 +32,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/rps" element={<RockPaperScissors />} />
       <Route path="/tictactoe" element={<TicTacToe />} />
-      <Route path="/wordle" element={<Placeholder title="Wordle" />} />
+      <Route path="/wordle" element={<Wordle />} />
       <Route path="/memory" element={<Placeholder title="Memory" />} />
     </Routes>
   );
