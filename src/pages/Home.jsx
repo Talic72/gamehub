@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+import { usePlayer } from "../context/PlayerContext";
 
 function Home() {
-  const [playerName, setPlayerName] = useState("");
+  const { playerName, setPlayerName } = usePlayer();
 
   return (
     <div
@@ -10,39 +10,39 @@ function Home() {
         maxWidth: "700px",
         margin: "40px auto",
         textAlign: "center",
-        fontFamily: "Arial, sans-serif",
+        fontFamily: "Arial",
       }}
     >
-      <h1>GameHub</h1>
+      <h1>🎮 GameHub</h1>
 
       <h3>Developer: Ethan</h3>
 
-      <div style={{ margin: "30px 0" }}>
-        <label htmlFor="playerName">Player Name</label>
+      <div style={{ marginTop: "30px" }}>
+        <label>Player Name</label>
 
         <br />
 
         <input
-          id="playerName"
           type="text"
           value={playerName}
-          onChange={(event) => setPlayerName(event.target.value)}
+          onChange={(e) => setPlayerName(e.target.value)}
           placeholder="Enter your name"
           style={{
-            marginTop: "10px",
-            padding: "8px",
+            padding: "10px",
             width: "250px",
+            marginTop: "10px",
           }}
         />
       </div>
 
-      <h2>Games</h2>
+      <h2 style={{ marginTop: "40px" }}>Games</h2>
 
       <div
         style={{
           display: "flex",
           flexDirection: "column",
-          gap: "12px",
+          gap: "15px",
+          marginTop: "20px",
         }}
       >
         <Link to="/rps">
@@ -66,4 +66,3 @@ function Home() {
 }
 
 export default Home;
-
